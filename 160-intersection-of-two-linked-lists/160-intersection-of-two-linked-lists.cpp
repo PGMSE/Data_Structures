@@ -12,18 +12,18 @@ public:
         ListNode *temp,*temp2;
         set<ListNode *> s;
         temp=headA;
-        while(headA!=0){
-            s.insert(headA);
-            headA=headA->next;
+        while(temp!=0){
+            s.insert(temp);
+            temp=temp->next;
         }
-        // temp=headB;
+        temp=headB;
         temp2=0;
-         while(headB!=0){
-           auto it=s.find(headB);
+         while(temp!=0){
+           auto it=s.find(temp);
              if(it!=s.end()) {
-                 temp2=headB;break;
+                 temp2=temp;break;
              }
-           headB=headB->next;
+           temp=temp->next;
         }
         
         return temp2;
