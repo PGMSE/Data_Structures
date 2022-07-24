@@ -17,7 +17,7 @@ class Solution
                     if (nums[i] == 0) count--;
                     i++;
                 }
-                
+
                 mx = max(mx, j - i + 1);
                 j++;
             }
