@@ -38,7 +38,9 @@ class Solution
                     if (m.find(s2[i]) != m.end())
                     {
                         m[s2[i]]++;
-                        if(m[s2[i]]==1){
+
+                        if (m[s2[i]] == 1)
+                        {
                             count++;
                         }
                     }
