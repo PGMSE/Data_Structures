@@ -12,10 +12,13 @@ class Solution
             while (j < n)
             {
                 m[fruits[j]]++;
-
-                if (m.size() == 2)
+                if(m.size()<2){
+                    j++;
+                }
+                else if (m.size() == 2)
                 {
                     mx = max(mx,j - i + 1);
+                     j++;
                 }
                 else if (m.size() > 2)
                 {
@@ -30,8 +33,9 @@ class Solution
                         }
                         i++;
                     }
+                     j++;
                 }
-                j++;
+                // j++;
             }
             if(mx==INT_MIN) mx=fruits.size();
             return mx;
