@@ -19,7 +19,7 @@ class Solution
                 {
                     start=mid+1;
                 }
-                else if(a[mid]<a[mid-1])
+                else 
                 {
                     end=mid-1;
                 }
