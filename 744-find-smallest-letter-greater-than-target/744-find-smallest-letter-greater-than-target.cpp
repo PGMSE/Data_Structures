@@ -6,6 +6,8 @@ class Solution
 
             int start = 0;
             int end = letters.size() - 1;
+            
+            int n=letters.size();
 
             int res;
             
