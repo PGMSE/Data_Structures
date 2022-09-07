@@ -1,40 +1,36 @@
-class Solution
-{
-    public:
-        int searchInsert(vector<int> &nums, int target)
+class Solution {
+public:
+    int searchInsert(vector<int>& nums, int target) {
+        int start=0;
+        int end=nums.size()-1;
+        int res=nums.size();
+        
+        // cout<<"st->"<<start<<endl;
+        //  cout<<"ed->"<<end<<endl;
+        //  cout<<"rs->"<<res<<endl;
+        
+        // if()
+        
+        while(start<=end)
         {
-            int start = 0;
-            int end = nums.size() - 1;
-
-            int res;
-
-            while (start <= end)
+            int mid=start+(end-start)/2;
+            
+            if(nums[mid]==target)
             {
-                int mid = start + (end - start) / 2;
-
-                if (nums[mid] == target)
-                {
-                    return mid;
-                }
-
-                if (nums[mid] > target)
-                {
-                    res = mid;
-                    end = mid - 1;
-                }
-                else
-                {
-                    start = mid + 1;
-                }
+                return mid;
             }
-            if (target > nums[nums.size() - 1])
+            if(nums[mid]<target)
             {
-                return nums.size();
+                
+                start=mid+1;
             }
-            if (target < nums[0])
+            else if(nums[mid]>target)
             {
-                return 0;
+                res=mid;
+                end=mid-1;
             }
-            return res;
         }
+        
+        return res;
+    }
 };
